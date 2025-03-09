@@ -2,7 +2,7 @@
 import React from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
-import { Sparkles, Layout, BookOpen, Wand2 } from 'lucide-react';
+import { Sparkles, Layout, BookOpen, Wand2, Library } from 'lucide-react';
 
 interface OptionsPanelProps {
   onTemplateSelect: (template: string) => void;
@@ -62,12 +62,52 @@ const OptionsPanel: React.FC<OptionsPanelProps> = ({
           </Select>
         </div>
         
+        {/* Template Library Section */}
+        <div className="mt-8">
+          <div className="flex items-center gap-2 mb-4">
+            <Library className="h-4 w-4 text-optimizer-gray" />
+            <h3 className="text-sm font-medium">Template Library</h3>
+          </div>
+          
+          <div className="space-y-3">
+            <div className="p-3 border rounded-md hover:bg-gray-50 cursor-pointer" onClick={() => onTemplateSelect("tcrei")}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-medium text-sm">TCREI Framework</span>
+                {selectedTemplate === "tcrei" && <div className="w-2 h-2 bg-optimizer-primary rounded-full"></div>}
+              </div>
+              <p className="text-xs text-gray-500">Structured framework for effective prompts</p>
+            </div>
+            
+            <div className="p-3 border rounded-md hover:bg-gray-50 cursor-pointer" onClick={() => onTemplateSelect("marketing")}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-medium text-sm">Marketing Copy</span>
+                {selectedTemplate === "marketing" && <div className="w-2 h-2 bg-optimizer-primary rounded-full"></div>}
+              </div>
+              <p className="text-xs text-gray-500">Optimize product marketing content</p>
+            </div>
+            
+            <div className="p-3 border rounded-md hover:bg-gray-50 cursor-pointer" onClick={() => onTemplateSelect("technical")}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-medium text-sm">Technical Writing</span>
+                {selectedTemplate === "technical" && <div className="w-2 h-2 bg-optimizer-primary rounded-full"></div>}
+              </div>
+              <p className="text-xs text-gray-500">Clear technical documentation</p>
+            </div>
+            
+            <div className="p-3 border rounded-md hover:bg-gray-50 cursor-pointer" onClick={() => onTemplateSelect("creative")}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-medium text-sm">Creative Writing</span>
+                {selectedTemplate === "creative" && <div className="w-2 h-2 bg-optimizer-primary rounded-full"></div>}
+              </div>
+              <p className="text-xs text-gray-500">Engaging stories and creative content</p>
+            </div>
+          </div>
+        </div>
+        
         <div className="mt-auto pt-4">
           <Button 
             className="w-full bg-optimizer-primary hover:bg-optimizer-secondary flex items-center gap-2"
             type="button"
-            // The optimize button in OptionsPanel doesn't have a direct action
-            // It's handled through the PromptEditor component
           >
             <Wand2 className="h-4 w-4" />
             <span>Optimize</span>

@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import PromptEditor from '@/components/PromptEditor';
 import OptionsPanel from '@/components/OptionsPanel';
-import TemplateCard from '@/components/TemplateCard';
-import LearningCard from '@/components/LearningCard';
 import PromptStrategies from '@/components/PromptStrategies';
 import Footer from '@/components/Footer';
 import { toast } from '@/hooks/use-toast';
@@ -64,20 +62,6 @@ const Index = () => {
     setModel(value);
   };
 
-  const handleStartLearning = () => {
-    toast({
-      title: "Learning Started",
-      description: "Redirecting to learning materials",
-    });
-  };
-
-  const handleRegister = () => {
-    toast({
-      title: "Registration",
-      description: "Opening registration form for the community workshop",
-    });
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -100,60 +84,6 @@ const Index = () => {
           </div>
           
           <PromptStrategies />
-          
-          <section className="mb-12 mt-12">
-            <h2 className="text-2xl font-bold mb-6">Template Library</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <TemplateCard
-                title="TCREI Framework"
-                description="Task, Context, Requirements, Examples, Input - A structured framework for effective prompts"
-                onUse={() => handleUseTemplate("TCREI Framework")}
-                isFramework={true}
-              />
-              <TemplateCard
-                title="Marketing Copy"
-                description="Optimize product descriptions and marketing content"
-                onUse={() => handleUseTemplate("Marketing Copy")}
-              />
-              <TemplateCard
-                title="Technical Writing"
-                description="Create clear technical documentation and guides"
-                onUse={() => handleUseTemplate("Technical Writing")}
-              />
-              <TemplateCard
-                title="Creative Writing"
-                description="Generate engaging stories and creative content"
-                onUse={() => handleUseTemplate("Creative Writing")}
-              />
-            </div>
-          </section>
-          
-          <section>
-            <h2 className="text-2xl font-bold mb-6">Learn Prompt Engineering</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <LearningCard
-                type="beginner"
-                title="Beginner's Guide"
-                description="Master the basics of prompt engineering"
-                lessons={12}
-                onAction={handleStartLearning}
-              />
-              <LearningCard
-                type="advanced"
-                title="Advanced Techniques"
-                description="Learn chain-of-thought and role-playing prompts"
-                lessons={8}
-                onAction={handleStartLearning}
-              />
-              <LearningCard
-                type="community"
-                title="Community Workshop"
-                description="Join live sessions with experts"
-                date="Mar 15, 2025"
-                onAction={handleRegister}
-              />
-            </div>
-          </section>
         </div>
       </main>
       

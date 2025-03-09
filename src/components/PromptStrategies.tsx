@@ -16,12 +16,12 @@ const PromptStrategies = () => {
             </div>
           </CardHeader>
           <CardContent>
-            <CardDescription className="text-sm text-gray-600">
-              <ul className="list-disc pl-5 space-y-2">
-                <li>Provide all relevant information necessary for the task, including instructions, examples, and context.</li>
-                <li>Organize the prompt clearly, using appropriate ordering, labeling, and delimiters to help the model parse the information effectively.</li>
-              </ul>
-            </CardDescription>
+            <div className="text-sm text-gray-600">
+              <div className="space-y-2">
+                <div>Provide all relevant information necessary for the task, including instructions, examples, and context.</div>
+                <div>Organize the prompt clearly, using appropriate ordering, labeling, and delimiters to help the model parse the information effectively.</div>
+              </div>
+            </div>
           </CardContent>
         </Card>
 
@@ -33,12 +33,12 @@ const PromptStrategies = () => {
             </div>
           </CardHeader>
           <CardContent>
-            <CardDescription className="text-sm text-gray-600">
-              <ul className="list-disc pl-5 space-y-2">
-                <li>Encourage the model to solve problems through a series of intermediate reasoning steps, mimicking a train of thought.</li>
-                <li>For example, breaking down a math problem step-by-step can lead to more accurate answers.</li>
-              </ul>
-            </CardDescription>
+            <div className="text-sm text-gray-600">
+              <div className="space-y-2">
+                <div>Encourage the model to solve problems through a series of intermediate reasoning steps, mimicking a train of thought.</div>
+                <div>For example, breaking down a math problem step-by-step can lead to more accurate answers.</div>
+              </div>
+            </div>
           </CardContent>
         </Card>
 
@@ -50,12 +50,12 @@ const PromptStrategies = () => {
             </div>
           </CardHeader>
           <CardContent>
-            <CardDescription className="text-sm text-gray-600">
-              <ul className="list-disc pl-5 space-y-2">
-                <li>Prompt design often requires multiple iterations to achieve the desired response consistently.</li>
-                <li>Applying best practices incrementally and testing for performance can help refine prompts effectively.</li>
-              </ul>
-            </CardDescription>
+            <div className="text-sm text-gray-600">
+              <div className="space-y-2">
+                <div>Prompt design often requires multiple iterations to achieve the desired response consistently.</div>
+                <div>Applying best practices incrementally and testing for performance can help refine prompts effectively.</div>
+              </div>
+            </div>
           </CardContent>
         </Card>
 
@@ -67,12 +67,12 @@ const PromptStrategies = () => {
             </div>
           </CardHeader>
           <CardContent>
-            <CardDescription className="text-sm text-gray-600">
-              <ul className="list-disc pl-5 space-y-2">
-                <li>Tools like Google's "Generate prompt" feature can transform simple objectives into tailored, effective prompts.</li>
-                <li>These tools reduce the guesswork in prompt engineering and help create more effective prompts.</li>
-              </ul>
-            </CardDescription>
+            <div className="text-sm text-gray-600">
+              <div className="space-y-2">
+                <div>Tools like Google's "Generate prompt" feature can transform simple objectives into tailored, effective prompts.</div>
+                <div>These tools reduce the guesswork in prompt engineering and help create more effective prompts.</div>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </div>
