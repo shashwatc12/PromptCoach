@@ -1,5 +1,4 @@
-
-# PromptOptimizer - AI Prompt Engineering Assistant
+# PromptCoach - AI Prompt Engineering Assistant
 
 A modern web application to help users craft better prompts for AI models and learn prompt engineering principles.
 
@@ -31,7 +30,7 @@ To run this project locally:
 git clone <repository-url>
 
 # Navigate to the project directory
-cd prompt-optimizer
+cd prompt-coach
 
 # Install dependencies
 npm install
