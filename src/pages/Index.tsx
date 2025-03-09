@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import PromptEditor from '@/components/PromptEditor';
@@ -20,6 +19,8 @@ const Index = () => {
     "Consider breaking your request into numbered steps",
     "Specify any constraints or limitations more clearly"
   ]);
+
+  const [promptText, setPromptText] = useState('');
 
   const handleOptimize = (prompt: string) => {
     // In a real app, this would call an API to analyze the prompt
@@ -45,6 +46,24 @@ const Index = () => {
   };
 
   const handleUseTemplate = (template: string) => {
+    let templateText = '';
+    
+    if (template === "TCREI Framework") {
+      templateText = `[Task]: Clearly state what you want the AI to do
+[Context]: Provide relevant background information
+[Requirements]: List specific elements you need in the response
+[Examples]: Show examples of desired outputs or formats
+[Input]: Include the specific data or content to work with`;
+    } else if (template === "Marketing Copy") {
+      templateText = "Create compelling marketing copy for [product] targeting [audience]. Focus on benefits like [benefit1], [benefit2], and [benefit3]. Use a [tone] tone of voice.";
+    } else if (template === "Technical Writing") {
+      templateText = "Write a technical explanation of [topic] for an audience with [expertise level] knowledge. Include key concepts: [concept1], [concept2]. Provide examples where appropriate.";
+    } else if (template === "Creative Writing") {
+      templateText = "Write a [genre] story about [character/situation]. Set the scene in [setting/time period]. The mood should be [mood]. Include themes of [theme1] and [theme2].";
+    }
+    
+    setPromptText(templateText);
+    
     toast({
       title: "Template Selected",
       description: `${template} template has been applied`,
@@ -71,13 +90,19 @@ const Index = () => {
       
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          <PromptEditor onOptimize={handleOptimize} />
+          <PromptEditor onOptimize={handleOptimize} promptText={promptText} onPromptChange={setPromptText} />
           <AnalysisFeedback scores={scores} suggestions={suggestions} />
         </div>
         
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-6">Template Library</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <TemplateCard
+              title="TCREI Framework"
+              description="Task, Context, Requirements, Examples, Input - A structured framework for effective prompts"
+              onUse={() => handleUseTemplate("TCREI Framework")}
+              isFramework={true}
+            />
             <TemplateCard
               title="Marketing Copy"
               description="Optimize product descriptions and marketing content"
