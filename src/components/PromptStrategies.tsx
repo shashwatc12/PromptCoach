@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Layout, Chain, RefreshCw, Wand2 } from 'lucide-react';
+import { Layout, Link, RefreshCw, Wand2 } from 'lucide-react';
 
 const PromptStrategies = () => {
   return (
@@ -27,7 +27,7 @@ const PromptStrategies = () => {
 
         <Card>
           <CardHeader className="flex flex-row items-center gap-3">
-            <Chain className="h-6 w-6 text-optimizer-primary" />
+            <Link className="h-6 w-6 text-optimizer-primary" />
             <div>
               <CardTitle>Chain-of-Thought (CoT) Prompting</CardTitle>
             </div>
