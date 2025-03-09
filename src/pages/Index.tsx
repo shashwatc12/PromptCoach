@@ -5,6 +5,7 @@ import PromptEditor from '@/components/PromptEditor';
 import OptionsPanel from '@/components/OptionsPanel';
 import TemplateCard from '@/components/TemplateCard';
 import LearningCard from '@/components/LearningCard';
+import PromptStrategies from '@/components/PromptStrategies';
 import Footer from '@/components/Footer';
 import { toast } from '@/hooks/use-toast';
 
@@ -16,8 +17,6 @@ const Index = () => {
   const handleOptimize = (prompt: string) => {
     // In a real app, this would call an API to analyze the prompt
     console.log("Optimizing prompt:", prompt);
-    
-    // No need to update scores or suggestions as we removed that section
   };
 
   const handleUseTemplate = (template: string) => {
@@ -100,7 +99,9 @@ const Index = () => {
             />
           </div>
           
-          <section className="mb-12">
+          <PromptStrategies />
+          
+          <section className="mb-12 mt-12">
             <h2 className="text-2xl font-bold mb-6">Template Library</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <TemplateCard

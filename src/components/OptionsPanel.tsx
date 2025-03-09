@@ -65,6 +65,9 @@ const OptionsPanel: React.FC<OptionsPanelProps> = ({
         <div className="mt-auto pt-4">
           <Button 
             className="w-full bg-optimizer-primary hover:bg-optimizer-secondary flex items-center gap-2"
+            type="button"
+            // The optimize button in OptionsPanel doesn't have a direct action
+            // It's handled through the PromptEditor component
           >
             <Wand2 className="h-4 w-4" />
             <span>Optimize</span>
