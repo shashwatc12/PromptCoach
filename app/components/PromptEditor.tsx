@@ -14,11 +14,11 @@ interface PromptEditorProps {
 
 export default function PromptEditor({ onOptimize, promptText, onPromptChange }: PromptEditorProps) {
   return (
-    <div className="prompt-container w-full border rounded-lg p-4 md:p-6 shadow-md bg-white/90">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">Prompt Editor</h2>
+    <div className="prompt-container w-full border rounded-lg p-3 md:p-4 shadow-md bg-white/95">
+      <h2 className="text-xl font-bold mb-2 text-gray-800">Prompt Editor</h2>
       
       <Textarea 
-        className="min-h-[120px] max-h-[200px] mb-4 resize-y focus:ring-2 focus:ring-optimizer-light transition-all" 
+        className="min-h-[80px] max-h-[150px] mb-3 resize-y focus:ring-2 focus:ring-optimizer-light transition-all text-sm" 
         placeholder="Enter your prompt here..."
         value={promptText}
         onChange={(e) => onPromptChange(e.target.value)}
@@ -26,10 +26,11 @@ export default function PromptEditor({ onOptimize, promptText, onPromptChange }:
       
       <div className="flex justify-end">
         <Button 
-          className="bg-gradient-to-r from-optimizer-primary to-optimizer-secondary hover:from-optimizer-secondary hover:to-optimizer-primary text-white shadow-md transition-all duration-300 flex items-center gap-2 transform hover:scale-105"
+          variant="gradient"
+          className="transform hover:scale-105"
           onClick={() => onOptimize(promptText)}
         >
-          <Wand2 className="h-4 w-4" />
+          <Wand2 className="h-4 w-4 mr-2" />
           Optimize
         </Button>
       </div>
