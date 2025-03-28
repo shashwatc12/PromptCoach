@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -17,7 +18,7 @@ export default function PromptEditor({ onOptimize, promptText, onPromptChange }:
       <h2 className="text-2xl font-bold mb-4">Prompt Editor</h2>
       
       <Textarea 
-        className="min-h-[300px] mb-6"
+        className="min-h-[180px] max-h-[250px] mb-6" // Reduced height from 300px to 180px
         placeholder="Enter your prompt here..."
         value={promptText}
         onChange={(e) => onPromptChange(e.target.value)}
